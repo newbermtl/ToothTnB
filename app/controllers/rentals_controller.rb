@@ -21,7 +21,7 @@ class RentalsController < ApplicationController
 
   def index
     @rentals = policy_scope(Rental)
-    @toothbrushes = Toothbrush.all.select{ |toothbrush| toothbrush.user_id == current_user.id }
+    @toothbrushes = Toothbrush.includes(:photo_attachment).all.select{ |toothbrush| toothbrush.user_id == current_user.id }
   end
 
   def show

@@ -4,7 +4,7 @@ class ToothbrushesController < ApplicationController
 
   def index
     if params[:query].present?
-      results = Toothbrush.search(params[:query])
+      results = Toothbrush.includes(:photo_attachment, :user, :toothbrush_tags, :tags).search(params[:query])
       @toothbrushes = []
       @markers = []
       results.each do |toothbrush|
@@ -16,9 +16,9 @@ class ToothbrushesController < ApplicationController
         @markers << toothbrush_hash
         @toothbrushes << toothbrush
       end
-      policy_scope(Toothbrush)
+      policy_scope(Toothbrush.includes(:photo_attachment, :user, :toothbrush_tags, :tags))
     else
-      @toothbrushes = policy_scope(Toothbrush)
+      @toothbrushes = policy_scope(Toothbrush.includes(:photo_attachment, [user: :photo_attachment], [toothbrush_tags: :tags]))
       @toothbrushes = @toothbrushes.where(status: "Available")
       @markers = @toothbrushes.geocoded.map do |toothbrush|
         {
@@ -32,7 +32,7 @@ class ToothbrushesController < ApplicationController
 
   def show
     @toothbrush = Toothbrush.find(params[:id])
-    @toothbrushes = @toothbrush.user.toothbrushes.reject{ |toothbrush| toothbrush == @toothbrush }
+    @toothbrushes = @toothbrush.user.toothbrushes.reject { |toothbrush| toothbrush == @toothbrush }
     @review = Review.new
     authorize @toothbrush
   end
