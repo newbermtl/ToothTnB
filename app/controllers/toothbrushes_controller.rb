@@ -18,7 +18,7 @@ class ToothbrushesController < ApplicationController
       end
       policy_scope(Toothbrush.includes(:photo_attachment, :user, :toothbrush_tags, :tags))
     else
-      @toothbrushes = policy_scope(Toothbrush.includes(:photo_attachment, [user: :photo_attachment], [toothbrush_tags: :tags]))
+      @toothbrushes = policy_scope(Toothbrush.includes(:photo_attachment, [user: :photo_attachment], [toothbrush_tags: :tag]))
       @toothbrushes = @toothbrushes.where(status: "Available")
       @markers = @toothbrushes.geocoded.map do |toothbrush|
         {
