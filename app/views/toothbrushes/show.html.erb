@@ -56,8 +56,10 @@
                 <p> <small> <em>Reviewed by: <%= review.user.first_name %> </em> </small> </p>
               </li>
             <% end %>
+            <% else %>
+              <h2> No reviews yet </h2>
           <% end %>
-          <%= render "reviews/form" %>
+          <%= render "reviews/form" if current_user != @toothbrush.user %>
         </div>
       </div>
     </div>
