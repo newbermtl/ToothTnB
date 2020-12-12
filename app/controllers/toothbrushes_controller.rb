@@ -57,7 +57,7 @@ class ToothbrushesController < ApplicationController
           new_tag.save!
         end
       end
-      redirect_to toothbrush_path(@toothbrush)
+      redirect_to toothbrushes_path
     else
       render 'new'
     end

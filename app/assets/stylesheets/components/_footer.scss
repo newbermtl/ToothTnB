@@ -1,4 +1,7 @@
 .footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
   background: #f5b461;
   display: flex;
   align-items: center;
@@ -7,6 +10,7 @@
   padding: 0px 50px;
   color: white;
   width: 100%;
+  margin-top: 50px
   h6 {
     opacity: 0.75;
   }
