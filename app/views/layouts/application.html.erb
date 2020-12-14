@@ -15,9 +15,11 @@
     <div class="main-layout">
       <%= render 'shared/navbar' %>
       <%= yield %>
-      <div style="height: 100px;">
-        <%= render 'shared/footer' %>
-      </div>
+      <% unless request.path == "/toothbrushes/#{params[:id]}" %>
+        <div style="height: 100px;">
+          <%= render 'shared/footer' %>
+        </div>
+      <% end %>
     </div>
   </body>
 </html>

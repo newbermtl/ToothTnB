@@ -3,7 +3,7 @@
     <h1 class='mt-3'>Dashboard</h1>
     <div class="my-rentals">
       <h2>My Rentals</h2>
-      <% if current_user.rentals == [] %>
+      <% if current_user.rentals.empty? %>
         <p> You don't have any rentals at the moment </p>
       <% else %>
         <% @rentals.each_with_index do |rental, index| %>
