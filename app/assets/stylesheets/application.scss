@@ -17,7 +17,8 @@
 @import "pages/rental_index";
 @import "mapbox-gl/dist/mapbox-gl";
 
-body {
+.main-layout {
+ position: relative;
  padding-top: 90px;
  min-height: 100vh;
 }
