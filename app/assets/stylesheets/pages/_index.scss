@@ -10,19 +10,6 @@
   text-align: center;
 }
 
-.toothbrush-container {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-body {
-  font-family: "Poppins", sans-serif;
-  h1 {
-    font-weight: lighter;
-  }
-  background-color: #bee7f7;
-  color: white;
-}
-
 a {
   text-decoration: none;
   color: #014cb1;
@@ -44,6 +31,7 @@ a:hover {
 }
 
 .toothbrush-container {
+  grid-template-columns: repeat(3, 1fr);
   p {
     color: black;
   }
@@ -53,7 +41,7 @@ a:hover {
 }
 
 .overflow {
-  overflow: scroll;
+  overflow: auto;
 }
 
 

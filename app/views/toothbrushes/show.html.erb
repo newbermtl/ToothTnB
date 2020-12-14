@@ -1,14 +1,14 @@
 <div class="show-container">
   <div class="row justify-content-center">
     <div class="col-sm-12 col-sm-8 col-lg-8">
-      <div class="left-container mt-3">
+      <div class="show-left-container">
         <div class="card-show">
           <div class="head-card">
             <h2> <%= @toothbrush.title %></h2>
             <%= cl_image_tag @toothbrush.photo.key, width: 200, crop: :fill %>
           </div>
-          <div class="toothbrush-description mt-5 pt-3">
-            <ul class="mb-0">
+          <div class="toothbrush-description">
+            <ul>
               <li><%= @toothbrush.description %> </li>
               <br>
               <li><%= @toothbrush.price %> $</li>
@@ -18,14 +18,14 @@
               <li><%= @toothbrush.address %> </li>
               <br>
             </ul>
-            <ul class="tags-list show-list text-left">
+            <ul class="tags-list show-list">
               <% @toothbrush.tags.each do |tag| %>
                 <li class="li-tags"><%= tag.name.capitalize %></li>
               <% end %>
             </ul>
           </div>
         </div>
-        <div class="link-container d-flex justify-content-center">
+        <div class="show-link-container">
           <% if policy(@toothbrush).edit? %>
             <%= link_to "Edit", edit_toothbrush_path(@toothbrush), id: "show-btn",  class: "btn btn-primary btn-lg mt-4 mb-4"  %>
           <% end %>
@@ -36,7 +36,7 @@
           <% end %>
           <%= link_to "Book Toothbrush", new_toothbrush_rental_path(@toothbrush), class: "btn btn-primary btn-lg mt-4 mb-4", id: "show-btn" %>
         </div>
-        <div class="list-group mb-4">
+        <div class="list-group">
           <% if !@toothbrush.reviews.empty? %>
             <h2>Reviews</h2>
             <% @toothbrush.reviews.each do |review| %>
@@ -66,7 +66,7 @@
     <% if !@toothbrushes.empty? %>
       <div class="col-sm-12 col-md-12 col-lg-4 pt-3 mb-4">
         <div class="right-container mb-5">
-          <div class="toothbrush_container">
+          <div class="toothbrush-container">
             <h2>Owner's other toothbrushes</h2>
             <% @toothbrushes.each do |toothbrush| %>
               <div class="card-trip m-3">
