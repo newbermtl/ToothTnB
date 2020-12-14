@@ -1,33 +1,31 @@
-<div class=" container central-block">
-  <div class="show-rental-container">
-    <div class="row", id='rental-show'>
-      <div class="col-4">
-        <%= cl_image_tag @toothbrush.photo.key, height: "300px", width: "300px", class: "rounded" %>
-      </div>
-      <div class="col-8 py-3">
-        <h1><%= @toothbrush.title %></h1>
-        <h4>Rent on: <%= @rental.date %></h4>
-        <% if @rental.status == "Accepted" || @rental.status == "Denied" %>
-          <h5><strong>Status: </strong><%= @rental.status %></h5>
-        <% else %>
-          <div class="dropdown show-dropdown">
-            <h5><strong>Status: </strong></h5>
-            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <%= @rental.status %>
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <% if policy(@rental).accept? %>
-                <%= link_to 'Accept', accept_rental_path(@rental), class: "dropdown-item dropdown-accept", method: :patch %>
-                <%= link_to 'Deny', deny_rental_path(@rental), class: "dropdown-item dropdown-deny", method: :patch %>
-              <% end %>
-            </div>
+<div class="central-block">
+  <div class="row", id='rental-show'>
+    <div class="col-4">
+      <%= cl_image_tag @toothbrush.photo.key, height: "300px", width: "300px", class: "rounded" %>
+    </div>
+    <div class="rental-info col-8">
+      <h1><%= @toothbrush.title %></h1>
+      <h4>Rent on: <%= @rental.date %></h4>
+      <% if @rental.status == "Accepted" || @rental.status == "Denied" %>
+        <h5><strong>Status: </strong><%= @rental.status %></h5>
+      <% else %>
+        <div class="dropdown show-dropdown">
+          <h5><strong>Status: </strong></h5>
+          <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= @rental.status %>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <% if policy(@rental).accept? %>
+              <%= link_to 'Accept', accept_rental_path(@rental), class: "dropdown-item dropdown-accept", method: :patch %>
+              <%= link_to 'Deny', deny_rental_path(@rental), class: "dropdown-item dropdown-deny", method: :patch %>
+            <% end %>
           </div>
-        <% end %>
-        <p><%= @user.last_name.capitalize %> <%= @user.first_name.capitalize %> rent this toothbrush</p>
-        <div class="col-md-12 text-center">
-          <%= link_to 'Rentals', rentals_path, class: 'btn btn-primary mx-2 form-btn' %>
-          <%= link_to 'Toothbrushes', toothbrushes_path, class: 'btn btn-primary mx-2 form-btn' %>
         </div>
+      <% end %>
+      <p><%= @user.last_name.capitalize %> <%= @user.first_name.capitalize %> rent this toothbrush</p>
+      <div class="col-md-12 text-center">
+        <%= link_to 'Rentals', rentals_path, class: 'btn btn-primary mx-2 form-btn' %>
+        <%= link_to 'Toothbrushes', toothbrushes_path, class: 'btn btn-primary mx-2 form-btn' %>
       </div>
     </div>
   </div>
