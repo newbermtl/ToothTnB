@@ -1,11 +1,13 @@
 .show-container {
   width: 85%;
-  margin: 0 auto;
+  margin: 16px auto 0;
   text-align: center;
 }
 
 .toothbrush-description {
   color: #63c4eb;
+  margin: 48px 12px 0 0;
+  padding-top: 16px;
   li {
     list-style: none;
     text-align: left;
@@ -16,6 +18,7 @@
   background-color: whitesmoke;
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 24px;
   padding: 20px;
   color: #2a8aaf;
   li {
@@ -26,13 +29,13 @@
   }
 }
 
-.right-container {
+.show-right-container {
   background-color: whitesmoke;
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   padding: 10px;
   position: absolute;
-  overflow-y: scroll;
+  overflow-y: auto;
   min-height: 450px;
   height: 96%;
   h2 {
@@ -42,4 +45,14 @@
 
 .show-list {
   margin-left: 30px;
+  text-align: left;
+}
+
+.show-left-container {
+  margin-top: 16px;
+}
+
+.show-link-container {
+  display: flex;
+  justify-content: center;
 }

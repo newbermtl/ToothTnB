@@ -6,20 +6,9 @@
   margin: 0 auto;
 }
 
-.title {
+.index-title {
   text-align: center;
-}
-
-.toothbrush-container {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-body {
-  font-family: "Poppins", sans-serif;
-  h1 {
-    font-weight: lighter;
-  }
-  background-color: #bee7f7;
+  padding: 16px;
   color: white;
 }
 
@@ -34,16 +23,13 @@ a:hover {
   color: #dd1321;
 }
 
-.p-3 {
-  color: white;
-  font-weight: bold;
-}
-
-.add-tb:hover {
-  color: #dd1321;
+.add-tb {
+  margin: 16px auto;
+  text-align: center;
 }
 
 .toothbrush-container {
+  grid-template-columns: repeat(3, 1fr);
   p {
     color: black;
   }
@@ -53,7 +39,9 @@ a:hover {
 }
 
 .overflow {
-  overflow: scroll;
+  overflow: auto;
 }
 
-
+.index-left-container {
+  padding-top: 16px;
+}
