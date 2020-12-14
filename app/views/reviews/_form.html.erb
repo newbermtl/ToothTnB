@@ -1,8 +1,11 @@
 <div class="container">
- <h2 class='mt-4'>Add a new review</h2>
-  <%= simple_form_for [ @toothbrush, @review ] do |f| %>
-   <%= f.input :rating, type: 'select', collection: [0, 1, 2, 3, 4, 5] %>
-   <%= f.input :content %>
-   <%= f.submit "Submit", class: "btn btn-primary", id: "show-btn" %>
- <% end %>
+  <div id="review-form">
+    <h2 class='mt-4'>Add a new review</h2>
+    <%= simple_form_for [ @toothbrush, @review ] do |f| %>
+      <%= f.input :rating, type: 'select', collection: [0, 1, 2, 3, 4, 5] %>
+      <%= f.input :content %>
+      <%= f.submit "Submit", class: "btn btn-primary", id: "show-btn" %>
+    <% end %>
+  </div>
+  <button type="button" onclick="document.getElementById('review-form').style.display='block'; this.style.visibility='hidden';", class="btn btn-primary form-btn">Add a review</button>
 </div>
