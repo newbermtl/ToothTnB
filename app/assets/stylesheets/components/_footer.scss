@@ -2,7 +2,7 @@
   position: absolute;
   left: 0;
   bottom: 0;
-  background: #f5b461;
+  background: $main-blue;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -31,16 +31,10 @@
 
 .footer-links a:hover {
   opacity: 1;
+  color: white;
 }
 
 .footer .fa-heart {
   color: #d23333;
 }
 
-.footer .fa-tooth {
-  opacity: 0.75;
-}
-
-.footer-copyright {
-  opacity: 0.75;
-}
