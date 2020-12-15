@@ -11,7 +11,7 @@
 }
 
 .card-trip {
-  height: 300px;
+  min-height: 325px;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -57,10 +57,11 @@
   background: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   align-items: center;
+  border-radius: 4px;
 }
 
 .card-product img {
-  height: 120px;
+  height: 100px;
   width: 100%;
   object-fit: cover;
 }
