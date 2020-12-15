@@ -1,6 +1,5 @@
 <div class="container">
   <div id="review-form">
-    <h2 class='mt-4'>Add a new review</h2>
     <%= simple_form_for [ @toothbrush, @review ] do |f| %>
       <%= f.input :rating, type: 'select', collection: [0, 1, 2, 3, 4, 5] %>
       <%= f.input :content %>
